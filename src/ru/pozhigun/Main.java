@@ -51,6 +51,10 @@ public class Main {
         if (isRoman) {
             result = arabic.convert(example[0]) - arabic.convert(example[1]);
             Checkout.checkNumber(arabic.convert(example[0]), arabic.convert(example[1]));
+            if (result < 0) {
+                result = Math.abs(result);
+                return "-" + roman.convert(result);
+            }
             return roman.convert(result);
         } else {
             result = Integer.parseInt(example[0]) - Integer.parseInt(example[1]);
@@ -77,6 +81,10 @@ public class Main {
         if (isRoman) {
             result = arabic.convert(example[0]) / arabic.convert(example[1]);
             Checkout.checkNumber(arabic.convert(example[0]), arabic.convert(example[1]));
+            if (result < 0) {
+                result = Math.abs(result);
+                return "-" + roman.convert(result);
+            }
             return roman.convert(result);
         } else {
             result = Integer.parseInt(example[0]) / Integer.parseInt(example[1]);
