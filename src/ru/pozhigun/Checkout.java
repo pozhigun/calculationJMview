@@ -11,18 +11,20 @@ public class Checkout {
             try {
                 throw new VariableException();
             } catch (VariableException e) {
-                System.out.println("Число не может быть > 10");
+                ConsoleHelper.writeConsole("Число не может быть > 10");
                 System.exit(0);
             }
         }
     }
 
     public static void checkNumber(String example) {
-        if (ConvertToArabic.isRoman(example) && ConvertToRoman.isArabic(example)) {
+        if (ConvertToArabic.isRoman(example) && ConvertToRoman.isArabic(example) ||
+                !ConvertToArabic.isRoman(example) && !ConvertToRoman.isArabic(example)) {
             try {
                 throw new VariableException();
             } catch (VariableException e) {
-                System.out.println("Нельзя использовать римские и арабские одновременно!");
+                ConsoleHelper.writeConsole("Нельзя использовать римские и арабские одновременно!");
+                ConsoleHelper.writeConsole("Неправильно значение! Пример: 2+2");
                 System.exit(0);
             }
         }

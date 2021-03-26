@@ -26,6 +26,8 @@ public class Main {
             result = calculateMultiplication(example.split("\\*"));
         } else if (example.contains("/")) {
             result = calculateDivision(example.split("/"));
+        } else {
+            ConsoleHelper.writeConsole(example);
         }
 
         ConsoleHelper.writeConsole(result);
